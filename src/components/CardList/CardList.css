@@ -1,0 +1,12 @@
+@import '~antd/dist/antd.css';
+
+.card-list {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  width: 1010px;
+  display: grid;
+  grid-template-columns: repeat(2, 451px);
+  grid-column-gap: 36px;
+  background-color: #fff;
+}
