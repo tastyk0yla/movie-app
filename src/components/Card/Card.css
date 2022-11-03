@@ -1,0 +1,63 @@
+@import '~antd/dist/antd.css';
+
+.card {
+  display: grid;
+  background-color: #fff;
+  height: 280px;
+  margin-bottom: 36px;
+  list-style: none;
+  grid-template-columns: 183px auto;
+  grid-column-gap: 20px;
+  filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+.card > img {
+  height: 280px;
+  width: 183px;
+}
+
+.card-content {
+  font-family: 'Inter';
+}
+
+.card--title {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  max-width: 210px;
+  line-height: 28px;
+}
+
+.card--date {
+  color: #827e7e;
+  font-size: 12px;
+  margin-bottom: 5px;
+  line-height: 22px;
+}
+
+.card--genre-list {
+  display: flex;
+  padding: 0;
+  margin-bottom: 5px;
+}
+
+.genre-list--item {
+  list-style: none;
+  background-color: #fafafa;
+  border-radius: 2px;
+  border: 1px solid #d9d9d9;
+  margin-right: 8px;
+}
+
+.genre-list--item > p {
+  margin: 0px 5px;
+  color: #585858;
+}
+
+.card--about {
+  font-size: 12px;
+  max-width: 228px;
+  max-height: 130px;
+  line-height: 22px;
+  margin-bottom: 0px;
+}
