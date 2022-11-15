@@ -3,8 +3,7 @@
 .card-list {
   margin-left: auto;
   margin-right: auto;
-  padding-top: 20px;
-  width: 1010px;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(2, 451px);
   grid-column-gap: 36px;

@@ -18,6 +18,7 @@
 
 .card-content {
   font-family: 'Inter';
+  overflow: hidden;
 }
 
 .card--title {

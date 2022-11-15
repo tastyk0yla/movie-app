@@ -4,7 +4,7 @@ import './CardList.css'
 
 const CardList = (props) => {
   const { data } = props
-  const { page, items } = data
+  const { items } = data
   const pagesArr = items.reduce(
     (acc, item, i) => {
       const pageIndex = Math.floor(i / 6)
@@ -24,7 +24,7 @@ const CardList = (props) => {
     [[]]
   )
 
-  return <ul className="card-list">{pagesArr[page - 1]}</ul>
+  return <ul className="card-list">{pagesArr}</ul>
 }
 
 export default CardList

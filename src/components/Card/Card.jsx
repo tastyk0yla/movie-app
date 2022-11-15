@@ -21,14 +21,13 @@ export default class Card extends Component {
 
   render() {
     const { poster, title, about, release } = this.props
-    const date = format(parseISO(release), 'LLLL d, yyyy')
     const overview = this.makeItShort(about)
     return (
       <li className="card">
-        <img src={`https://image.tmdb.org/t/p/original${poster}`} alt={title} />
+        <img src={`https://image.tmdb.org/t/p/original${poster}`} alt={` ${title} poster`} />
         <div className="card-content">
           <h2 className="card--title">{title}</h2>
-          <p className="card--date">{date}</p>
+          {release ? <p className="card--date">{format(parseISO(release), 'LLLL d, yyyy')}</p> : null}
           <ul className="card--genre-list">
             <li className="genre-list--item">
               <p>Action</p>
