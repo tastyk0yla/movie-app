@@ -4,54 +4,85 @@
   display: grid;
   background-color: #fff;
   height: 280px;
-  margin-bottom: 36px;
   list-style: none;
   grid-template-columns: 183px auto;
   grid-column-gap: 20px;
   filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
 }
 
-.card > img {
+.card-image--big {
+  display: block;
   height: 280px;
   width: 183px;
 }
 
-.card-content {
+.card-image--small {
+  display: none;
+}
+
+.card-header {
+  height: fit-content;
+}
+
+/* .card-content {
   font-family: 'Inter';
   overflow: hidden;
-}
+} */
 
 .card--title {
   font-size: 20px;
   margin-top: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
   max-width: 210px;
   line-height: 28px;
+}
+
+.card--rating {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 100px;
+  top: 8px;
+  right: 7px;
+  display: flex;
+}
+
+.card--rating > span {
+  margin: auto;
+  font-size: 12px;
+  line-height: 22px;
+  font-weight: 400;
 }
 
 .card--date {
   color: #827e7e;
   font-size: 12px;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
   line-height: 22px;
 }
 
 .card--genre-list {
   display: flex;
+  flex-wrap: wrap;
   padding: 0;
-  margin-bottom: 5px;
+  margin-bottom: 0;
 }
 
 .genre-list--item {
+  display: flex;
   list-style: none;
   background-color: #fafafa;
   border-radius: 2px;
   border: 1px solid #d9d9d9;
   margin-right: 8px;
+  margin-bottom: 8px;
+  height: 20px;
 }
 
-.genre-list--item > p {
-  margin: 0px 5px;
+.genre-list--item > span {
+  font-size: 12px;
+  line-height: 15px;
+  margin: auto 4px;
   color: #585858;
 }
 
@@ -61,4 +92,74 @@
   max-height: 130px;
   line-height: 22px;
   margin-bottom: 0px;
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.ant-rate {
+  position: absolute;
+  bottom: 14px;
+}
+
+.ant-rate-star {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    display: flex;
+    height: 245px;
+  }
+
+  .card-image--big {
+    display: none;
+  }
+  
+  .card-image--small {
+    display: block;
+    width: 60px;
+  }
+
+  .card-content {
+    width: 100%;
+  }
+  .card-header {
+    display: grid;
+    margin-top: 6px;
+    margin-left: 10px;
+    grid-template-columns: 60px 1fr;
+    grid-column-gap: 10px;
+  }
+
+  .card-header-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .card--title {
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 250px;
+  }
+
+  .card--date, .card--genre-list {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .card-main-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+  }
+  .card--about {
+    margin-left: 10px;
+    max-width: fit-content;
+  }
+  .ant-rate{
+    position: absolute;
+    right: 12px;
+    bottom: 10px;
+  }
 }

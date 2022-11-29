@@ -10,6 +10,10 @@
   margin: 0 auto;
 }
 
+.ant-tabs-nav-wrap {
+  width: 146px;
+}
+
 .ant-tabs-tabpane {
   display: flex;
   flex-direction: column;
@@ -18,3 +22,4 @@
 .ant-pagination {
   margin: auto;
 }
+

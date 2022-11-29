@@ -6,6 +6,18 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(2, 451px);
-  grid-column-gap: 36px;
+  grid-gap: 36px;
   background-color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+  .card-list {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 388px;
+    grid-row-gap: 20px;
+    background-color: #fff;
+  }
 }
