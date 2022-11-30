@@ -3,7 +3,6 @@
 .app {
   width: 1010px;
   display: flex;
-  /* grid-template-columns: 36px 938px 36px; */
   flex-direction: column;
   background-color: #fff;
   height: 100%;

@@ -35,9 +35,9 @@ export default class Card extends Component {
           let borderColor = ''
           const avgRating = this.fixNumber(rating)
           if (rating < 3) borderColor = '#E90000'
-          if (rating > 3 && rating < 5) borderColor = '#E97E00'
-          if (rating > 5 && rating < 7) borderColor = '#E9D100'
-          if (rating > 7) borderColor = '#66E900'
+          if (rating >= 3 && rating < 5) borderColor = '#E97E00'
+          if (rating >= 5 && rating < 7) borderColor = '#E9D100'
+          if (rating >= 7) borderColor = '#66E900'
           const rated = JSON.parse(localStorage.getItem(sessId))
           {
             if (genres.length > 0) genres = Object.fromEntries(genres.map((n) => [n.id, n.name]))
