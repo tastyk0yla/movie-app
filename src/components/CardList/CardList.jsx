@@ -3,15 +3,13 @@ import Card from '../Card'
 import './CardList.css'
 
 const CardList = (props) => {
-  const { sessId, items, rateMovie } = props
-  const pagesArr = items.reduce(
-    (acc, item, i) => {
-      const pageIndex = Math.floor(i / 6)
-      if (acc[pageIndex] === undefined) acc.push([])
-      acc[pageIndex].push(
+  const { sessionId, items, rateMovie } = props
+  const List = items.reduce(
+    (acc, item) => {
+      acc.push(
         <Card
           key={item.id}
-          sessId={sessId}
+          sessionId={sessionId}
           poster={item.poster_path}
           title={item.original_title}
           about={item.overview}
@@ -27,7 +25,7 @@ const CardList = (props) => {
     [[]]
   )
 
-  return <ul className="card-list">{pagesArr}</ul>
+  return <ul className="card-list">{List}</ul>
 }
 
 export default CardList

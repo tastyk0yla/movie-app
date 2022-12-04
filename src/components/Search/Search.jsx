@@ -6,9 +6,9 @@ import './Search.css'
 import CardList from '../CardList'
 
 const Search = (props) => {
-  const { sessId, rateMovie, handleSearch_debounced, getItems } = props
+  const { sessionId, rateMovie, searchHandlerDebounced, getItems } = props
   const { query, items, totalItems, isLoading, isError, error, page } = props.stateObj
-  const errEl = isError ? (
+  const errorElement = isError ? (
     <Alert
       style={{ margin: 'auto' }}
       message={error.message}
@@ -27,7 +27,9 @@ const Search = (props) => {
     />
   ) : null
   const spinner = isLoading ? <Spin size="large" style={{ margin: 'auto' }} /> : null
-  const success = !(isLoading || isError) ? <CardList items={items} sessId={sessId} rateMovie={rateMovie} /> : null
+  const success = !(isLoading || isError) ? (
+    <CardList items={items} sessionId={sessionId} rateMovie={rateMovie} />
+  ) : null
 
   return (
     <Fragment>
@@ -36,10 +38,10 @@ const Search = (props) => {
         defaultValue={query}
         placeholder="Type to search"
         onChange={(event) => {
-          handleSearch_debounced(event.target.value)
+          searchHandlerDebounced(event.target.value)
         }}
       />
-      {errEl}
+      {errorElement}
       {spinner}
       {success}
       <Pagination

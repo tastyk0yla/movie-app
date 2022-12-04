@@ -35,19 +35,18 @@
       "import/no-unresolved": [2, { "caseSensitive": false }],
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
       "import/order": [
-        2,
-        {
-          "groups": [
-            "builtin",
-            "external",
-            "internal",
-            "parent",
-            "sibling",
-            "index"
-          ],
-          "newlines-between": "always"
-        }
-      ]
+        "error", 
+        { "groups": 
+            [
+              "external", 
+              "builtin", 
+              "internal", 
+              "sibling", 
+              "parent", 
+              "index"
+            ]
+        } 
+      ] 
     },
     "settings": {
       "import/resolver": {

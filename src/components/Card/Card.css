@@ -24,11 +24,6 @@
   height: fit-content;
 }
 
-/* .card-content {
-  font-family: 'Inter';
-  overflow: hidden;
-} */
-
 .card--title {
   font-size: 20px;
   margin-top: 10px;
@@ -114,7 +109,7 @@
   .card-image--big {
     display: none;
   }
-  
+
   .card-image--small {
     display: block;
     width: 60px;
@@ -143,7 +138,8 @@
     max-width: 250px;
   }
 
-  .card--date, .card--genre-list {
+  .card--date,
+  .card--genre-list {
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -157,7 +153,7 @@
     margin-left: 10px;
     max-width: fit-content;
   }
-  .ant-rate{
+  .ant-rate {
     position: absolute;
     right: 12px;
     bottom: 10px;

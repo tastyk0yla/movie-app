@@ -4,7 +4,7 @@ import { parseISO, format } from 'date-fns'
 
 import './Card.css'
 
-import { GenresConsumer } from '../Context'
+import { GenresConsumer } from '../../context/genre.context'
 
 export default class Card extends Component {
   makeItShort = (string, desiredLength) => {
@@ -29,7 +29,7 @@ export default class Card extends Component {
     return (
       <GenresConsumer>
         {(genres) => {
-          const { poster, title, about, release, rating, sessId, rateMovie, movieId, movieGenres } = this.props
+          const { poster, title, about, release, rating, sessionId, rateMovie, movieId, movieGenres } = this.props
           const titleShorted = this.makeItShort(title, 20)
           const aboutShorted = this.makeItShort(about, movieGenres.length > 5 ? 120 : 180)
           let borderColor = ''
@@ -38,7 +38,7 @@ export default class Card extends Component {
           if (rating >= 3 && rating < 5) borderColor = '#E97E00'
           if (rating >= 5 && rating < 7) borderColor = '#E9D100'
           if (rating >= 7) borderColor = '#66E900'
-          const rated = JSON.parse(localStorage.getItem(sessId))
+          const rated = JSON.parse(localStorage.getItem(sessionId))
           {
             if (genres.length > 0) genres = Object.fromEntries(genres.map((n) => [n.id, n.name]))
             const genresList = movieGenres.reduce((acc, id, index) => {
@@ -91,7 +91,7 @@ export default class Card extends Component {
                       count={10}
                       defaultValue={rated ? rated[movieId] || 0 : 0}
                       onChange={(value) => {
-                        rateMovie(value, sessId, movieId)
+                        rateMovie(value, movieId)
                       }}
                     />
                   </div>

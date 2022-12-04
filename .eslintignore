@@ -1,0 +1,11 @@
+**/.git
+**/.svn
+**/.hg
+**/.css
+**/.html
+
+**/.json
+**/.gitignore
+**/.prettierrc
+**/.eslintrc
+**/node_modules

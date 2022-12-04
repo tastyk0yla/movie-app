@@ -6,12 +6,12 @@ import CardList from '../CardList'
 export default class Rated extends Component {
   componentDidMount() {
     const { page } = this.props.stateObj
-    this.props.getRated(this.props.sessId, page)
+    this.props.getRated(this.props.sessionId, page)
   }
   render() {
     const { items, totalItems, isLoading, isError, error, page } = this.props.stateObj
-    const { sessId, rateMovie, getRated } = this.props
-    const errEl = isError ? (
+    const { sessionId, rateMovie, getRated } = this.props
+    const errorElement = isError ? (
       <Alert
         style={{ margin: 'auto' }}
         message={error.message}
@@ -30,16 +30,18 @@ export default class Rated extends Component {
       />
     ) : null
     const spinner = isLoading ? <Spin size="large" style={{ margin: 'auto' }} /> : null
-    const success = !(isLoading || isError) ? <CardList items={items} sessId={sessId} rateMovie={rateMovie} /> : null
+    const success = !(isLoading || isError) ? (
+      <CardList items={items} sessionId={sessionId} rateMovie={rateMovie} />
+    ) : null
 
     return (
       <Fragment>
-        {errEl}
+        {errorElement}
         {spinner}
         {success}
         <Pagination
           onChange={(current) => {
-            getRated(sessId, current)
+            getRated(sessionId, current)
           }}
           defaultCurrent={page}
           total={totalItems}
@@ -50,7 +52,3 @@ export default class Rated extends Component {
     )
   }
 }
-// const Rated = (props) => {
-
-// }
-// export default Rated
